@@ -173,6 +173,15 @@
                         </form>
                     </div>
 
+    <router-view />
+     </hide-at>
+      <show-at breakpoint="mediumAndAbove">
+  <div class="home">
+    <b-row>
+      <div class="text">
+        <p class="text-1">Chào mừng Quý khách đến với</p>
+        <div class="text-show">
+          <a>SHOWROOM VIETMAP</a>
                 </div>
             </div>
         </div> -->
