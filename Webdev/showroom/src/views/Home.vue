@@ -3,295 +3,511 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div> -->
-  <div class="home">
-     <div class="content">
+  <div id="break">
+    <div class="home" id="session1">
+      <div class="content">
+        <div class="text">
+          <p class="text-1">Chào mừng Quý khách đến với</p>
+          <a class="text-show">SHOWROOM VIETMAP</a>
+          <p class="text-2">
+            Với mong muốn hỗ trợ khách hàng ngày một tốt hơn,
+          </p>
+          <p class="text-2">
+            Vietmap trân trọng kính mời Quý khách đánh giá chất lượng hỗ trợ
+          </p>
+          <p class="text-2">của nhân viên Showroom</p>
+        </div>
+        <div id="info">
+          <info-customer></info-customer>
+          <div class="text">
+            <p class="text-2">
+              Với những trải nghiệm thực tế tại Showroom hôm nay,
+            </p>
+            <p class="text-2">Quý khách vui lòng chia sẻ mức độ hài lòng về</p>
+            <p class="text-2">chất lượng hỗ trợ của nhân viên tư vấn</p>
+          </div>
+        </div>
+        <div class="rating">
+          <ul>
+            <button
+              v-b-modal.modal-center1
+              type="button"
+              variant="outline-dark"
+            >
+              <div class="image">
+                <img src="../assets/button1.svg" />
+              </div>
+              <div>
+                <a class="text-3">Rất không hài lòng</a>
+              </div>
+            </button>
+            <button
+              v-b-modal.modal-center1
+              type="button"
+              variant="outline-dark"
+            >
+              <div class="image">
+                <img src="../assets/button2.svg" />
+              </div>
+              <div>
+                <a class="text-3">Không hài lòng</a>
+              </div>
+            </button>
+            <button
+              v-b-modal.modal-center3
+              type="button"
+              variant="outline-dark"
+            >
+              <div class="image">
+                <img src="../assets/button3.svg" />
+              </div>
+              <div>
+                <a class="text-3">Bình thường</a>
+              </div>
+            </button>
+            <button v-b-modal.modal-center type="button" variant="outline-dark">
+              <div class="image">
+                <img src="../assets/button4.svg" />
+              </div>
+              <div>
+                <a class="text-3">Hài lòng</a>
+              </div>
+            </button>
+            <button v-b-modal.modal-center type="button" variant="outline-dark">
+              <div class="image">
+                <img src="../assets/button5.svg" />
+              </div>
+              <div>
+                <a class="text-3">Rất hài lòng</a>
+              </div>
+            </button>
+          </ul>
+        </div>
+
+        <!-- Popup1 -->
+        <div>
+          <b-modal id="modal-center1" hide-footer="true">
+            <div class="modal-center___BV_modal_body_">
+              <div class="image-popup">
+                <img src="../assets/button6.svg" />
+              </div>
+              <div class="text-comment">
+                <p class="text-4">
+                  Vietmap xin lỗi vì nhân viên Trần Phối Dung
+                </p>
+                <p class="text-4">chưa làm Quý khách hài lòng</p>
+              </div>
+              <div class="text-popup">
+                <p class="text-2">
+                  Quý khách vui lòng chia sẻ những điều không hài lòng để
+                </p>
+                <p class="text-2">
+                  Vietmap cải thiện chất lượng hoặc để lại số điện thoại,
+                </p>
+                <p class="text-2">
+                  Quản lý bộ phận CSKH Vietmap sẽ liên hệ lại để hỗ trợ Quý
+                </p>
+                <p class="text-2">
+                  khách tốt hơn cũng như để nâng cao chất lượng phục vụ
+                </p>
+                <p class="text-2">khách hàng tại Showroom</p>
+              </div>
+              <b-form>
+                <b-form-group
+                  label="Số điện thoại (không bắt buộc)"
+                  label-for="phone-input"
+                  style="
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                  "
+                >
+                  <b-form-input
+                    id="phone-input"
+                    placeholder="Nhập số điện thoại của Quý khách"
+                  ></b-form-input>
+                </b-form-group>
+                <b-form-group
+                  label="Góp ý"
+                  label-for="comment-input"
+                  style="
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                  "
+                >
+                  <textarea
+                    id="comment-input"
+                    placeholder="Ghi góp ý của Quý khách vào đây"
+                  ></textarea>
+                </b-form-group>
+                <router-link to="/thankyou1"
+                  ><button
+                    id="thankyou1"
+                    type="submit"
+                    class="btn btn-primary sendcomment"
+                    @click="redirectToThankyou1()"
+                  >
+                    GỬI ĐÁNH GIÁ
+                  </button></router-link
+                >
+              </b-form>
+            </div>
+          </b-modal>
+        </div>
+
+        <!-- Popup3 -->
+        <b-modal id="modal-center3" hide-footer="true">
+          <div class="modal-center___BV_modal_body_">
+            <div class="image-popup">
+              <img src="../assets/button7.svg" />
+            </div>
+            <div class="text-comment">
+              <p class="text-4">Vietmap rất tiếc vì nhân viên Showroom</p>
+              <p class="text-4">chưa đáp ứng được mong đợi của Quý khách</p>
+            </div>
+            <div class="text-popup">
+              <p class="text-2">
+                Quý khách vui lòng góp ý những điểm nhân viên
+              </p>
+              <p class="text-2">
+                Trần Phối Dung cần cải thiện để Quý khách hài lòng hơn
+              </p>
+            </div>
+            <form>
+              <b-form-group
+                label="Số điện thoại (không bắt buộc)"
+                label-for="phone-input"
+                style="font-weight: bold; font-size: 12px; margin-bottom: 20px"
+              >
+                <b-form-input
+                  id="phone-input"
+                  placeholder="Nhập số điện thoại của Quý khách"
+                ></b-form-input>
+              </b-form-group>
+              <b-form-group
+                label="Góp ý"
+                label-for="comment-input"
+                style="font-weight: bold; font-size: 12px; margin-bottom: 20px"
+              >
+                <textarea
+                  id="comment-input"
+                  placeholder="Ghi góp ý của Quý khách vào đây"
+                ></textarea>
+              </b-form-group>
+              <router-link to="/thankyou2">
+                <b-button type="submit" class="btn btn-primary sendcomment"
+                  >GỬI ĐÁNH GIÁ</b-button
+                ></router-link
+              >
+            </form>
+          </div>
+        </b-modal>
+        <!-- Popup45 -->
+        <b-modal id="modal-center" hide-footer="true">
+          <div class="modal-center___BV_modal_body_">
+            <div class="image-popup">
+              <img src="../assets/button8.svg" />
+            </div>
+            <div class="text-comment">
+              <p class="text-4">Quý khách vui lòng cho</p>
+              <p class="text-4">Vietmap xin số điện thoại</p>
+            </div>
+            <form>
+              <b-form-group
+                label="Số điện thoại (không bắt buộc)"
+                label-for="phone-input"
+                style="font-weight: bold; font-size: 12px; margin-bottom: 20px"
+              >
+                <b-form-input
+                  id="phone-input"
+                  placeholder="Nhập số điện thoại của Quý khách"
+                ></b-form-input>
+              </b-form-group>
+              <router-link to="/thankyou3">
+                <b-button type="submit" class="btn btn-primary sendcomment"
+                  >GỬI ĐÁNH GIÁ</b-button
+                ></router-link
+              >
+            </form>
+          </div>
+        </b-modal>
+      </div>
+      <router-view />
+    </div>
+    <div class="home" id="session2">
+      <b-row>
+        <div class="text">
+          <p class="text-1">Chào mừng Quý khách đến với</p>
+          <div class="text-show">
+            <a>SHOWROOM VIETMAP</a>
+          </div>
+          <p class="text-2">
+            Với mong muốn hỗ trợ khách hàng ngày một tốt hơn,
+          </p>
+          <p class="text-2">
+            Vietmap trân trọng kính mời Qúy khách đánh giá chất lượng hỗ trợ
+          </p>
+          <p class="text-2">của nhân viên Showroom</p>
+        </div>
+        <b-col sm="6">
+          <info-customer></info-customer>
+          <div id="info">
             <div class="text">
-                    <p class="text-1">Chào mừng Quý khách đến với</p>
-                    <a class="text-show">SHOWROOM VIETMAP</a>
-                    <p class="text-2">Với mong muốn hỗ trợ khách hàng ngày một tốt hơn,</p>
-                    <p class="text-2"> Vietmap trân trọng kính mời Qúy khách đánh giá chất lượng hỗ trợ</p>
-                    <p class="text-2"> của nhân viên Showroom</p>
+              <p class="text-2">
+                Với những trải nghiệm thực tế tại Showroom hôm nay,
+              </p>
+              <p class="text-2">
+                Quý khách vui lòng chia sẻ mức độ hài lòng về
+              </p>
+              <p class="text-2">chất lượng hỗ trợ của nhân viên tư vấn</p>
             </div>
-            <div id="info">
-                <info-customer></info-customer>
-                <div class="text">
-                    <p class="text-2">Với những trải nghiệm thực tế tại Showroom hôm nay,</p>
-                    <p class="text-2">Quý khách vui lòng chia sẻ mức độ hài lòng về</p>
-                    <p class="text-2">chất lượng hỗ trợ của nhân viên tư vấn</p>
+          </div>
+        </b-col>
+        <b-col sm="6">
+          <div class="rating">
+            <ul>
+              <button
+                v-b-modal.modal-center4
+                type="button"
+                variant="outline-dark"
+              >
+                <div class="image">
+                  <img src="../assets/button1.svg" />
                 </div>
-            </div>
-            <div class="rating">
-              <!-- <ul>
-                    <button type="button" data-toggle="modal" data-target="#exampleModalLong" v-onclick:[active]="1">
-                        <div class="button">
-                            <img src="../assets/button1.svg" alt="">
-                        </div>
-                        <div>
-                            <a class="text-3">Rất không hài lòng</a>
-                        </div>
-                    </button>
-                    <button type="button" data-toggle="modal" data-target="#exampleModalLong">
-                        <div class="button">
-                            <img src="../assets/button2.svg" alt="">
-                        </div>
-                        <div>
-                            <a class="text-3">Không hài lòng</a>
-                        </div>
-                    </button>
-                    <button type="button" data-toggle="modal" data-target="#exampleModalLong3">
-                        <div class="button">
-                            <img src="../assets/button3.svg" alt="">
-                        </div>
-                        <div>
-                            <a class="text-3">Bình thường</a>
-                        </div>
-                    </button>
-                    <button type="button" data-toggle="modal" data-target="#exampleModalLong4">
-                        <div class="button">
-                            <img src="../assets/button4.svg" alt="">
-                        </div>
-                        <div>
-                            <a class="text-3">Hài lòng </a>
-                        </div>
-                    </button>
-                    <button type="button" data-toggle="modal" data-target="#exampleModalLong4">
-                        <div class="button">
-                            <img src="../assets/button5.svg" alt="">
-                        </div>
-                        <div>
-                            <a class="text-3">Rất hài lòng </a>
-                        </div>
-                    </button>
-                </ul> -->
-                  <ul>
-                      <button v-b-modal.modal-center1 type="button" variant="outline-dark" >
-                          <div class="image">
-                              <img src="../assets/button1.svg">
-                          </div>
-                          <div>
-                              <a class="text-3">Rất không hài lòng</a>
-                          </div>
-                      </button>
-                      <button v-b-modal.modal-center1 type="button" variant="outline-dark">
-                          <div class="image">
-                              <img src="../assets/button2.svg">
-                          </div>
-                          <div>
-                              <a class="text-3">Không hài lòng</a>
-                          </div>
-                      </button>
-                      <button v-b-modal.modal-center3 type="button" variant="outline-dark">
-                          <div class="image">
-                              <img src="../assets/button3.svg">
-                          </div>
-                          <div>
-                              <a class="text-3">Bình thường</a>
-                          </div>
-                      </button>
-                      <button v-b-modal.modal-center type="button" variant="outline-dark">
-                          <div class="image">
-                              <img src="../assets/button4.svg">
-                          </div>
-                          <div>
-                              <a class="text-3">Hài lòng</a>
-                          </div>
-                      </button>
-                      <button v-b-modal.modal-center type="button" variant="outline-dark">
-                          <div class="image">
-                              <img src="../assets/button5.svg">
-                          </div>
-                          <div>
-                              <a class="text-3">Rất hài lòng</a>
-                          </div>
-                      </button>
-                  </ul>
-            </div>
-            
-            <!-- Popup12 -->
-            <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="image-popup">
-                        <b-img src="../assets/button6.svg"></b-img>
-                   </div>
-                   <div class="text-comment">
-                        <p class="text-4">Vietmap xin lỗi vì nhân viên Trần Phối Dung</p>
-                        <p class="text-4">chưa làm Quý khách hài lòng</p>
-                   </div>
-                        <div class="text-popup">
-                            <p class="text-2">Quý khách vui lòng chia sẻ những điều không hài lòng để</p>
-                            <p class="text-2">Vietmap cải thiện chất lượng hoặc để lại số điện thoại,</p>
-                            <p class="text-2">Quản lý bộ phận CSKH Vietmap sẽ liên hệ lại để hỗ trợ Quý</p>
-                            <p class="text-2">khách tốt hơn cũng như để nâng cao chất lượng phục vụ</p>
-                            <p class="text-2">khách hàng tại Showroom</p>
-                        </div>
-                        <form>
-                            <div class="form-group">
-                                <label for="phonenumber">Số điện thoại (không bắt buộc)</label>
-                                <input type="numberphone" class="form-control" id="phonenumber"
-                                    placeholder="Nhập số điện thoại của Quý khách">
-                            </div>
-                            <div class="form-group">
-                                <label for="comment">Góp ý</label>
-                                <textarea type="text" class="form-control" id="comment"
-                                    placeholder="Ghi góp ý của Quý khách vào đây"></textarea>
-                            </div>
-                             <router-link to="/thankyou1"><button id="thankyou1" type="submit" class="btn btn-primary sendcomment"  @click="redirectToThankyou1()">GỬI ĐÁNH GIÁ</button></router-link>
-                        </form>
+                <div>
+                  <a class="text-3">Rất không hài lòng</a>
+                </div>
+              </button>
+              <button
+                v-b-modal.modal-center4
+                type="button"
+                variant="outline-dark"
+              >
+                <div class="image">
+                  <img src="../assets/button2.svg" />
+                </div>
+                <div>
+                  <a class="text-3">Không hài lòng</a>
+                </div>
+              </button>
+              <button
+                v-b-modal.modal-center5
+                type="button"
+                variant="outline-dark"
+              >
+                <div class="image">
+                  <img src="../assets/button3.svg" />
+                </div>
+                <div>
+                  <a class="text-3">Bình thường</a>
+                </div>
+              </button>
+              <button
+                v-b-modal.modal-center6
+                type="button"
+                variant="outline-dark"
+              >
+                <div class="image">
+                  <img src="../assets/button4.svg" />
+                </div>
+                <div>
+                  <a class="text-3">Hài lòng</a>
+                </div>
+              </button>
+              <button
+                v-b-modal.modal-center6
+                type="button"
+                variant="outline-dark"
+              >
+                <div class="image">
+                  <img src="../assets/button5.svg" />
+                </div>
+                <div>
+                  <a class="text-3">Rất hài lòng</a>
+                </div>
+              </button>
+            </ul>
+          </div>
+          <!-- Popup1 -->
+          <div>
+            <b-modal id="modal-center4" hide-footer="true">
+              <div class="modal-center___BV_modal_body_">
+                <div class="image-popup">
+                  <img src="../assets/button6.svg" />
+                </div>
+                <div class="text-comment">
+                  <p>Vietmap xin lỗi vì nhân viên Trần Phối Dung</p>
+                  <p>chưa làm Quý khách hài lòng</p>
+                </div>
+                <b-row>
+                  <b-col sm="6">
+                    <div class="text-popup">
+                      <p>
+                        Quý khách vui lòng chia sẻ những điều không hài lòng để
+                        Vietmap cải thiện chất lượng hoặc để lại số điện thoại,
+                        Quản lý bộ phận CSKH Vietmap sẽ liên hệ lại để hỗ trợ
+                        Quý khách tốt hơn cũng như để nâng cao chất lượng phục
+                        vụ khách hàng tại Showroom
+                      </p>
+
+                      <!-- <p>
+                      Vietmap cải thiện chất lượng hoặc để lại số điện thoại,
+                    </p>
+                    <p>
+                      Quản lý bộ phận CSKH Vietmap sẽ liên hệ lại để hỗ trợ Quý
+                    </p>
+                    <p>khách tốt hơn cũng như để nâng cao chất lượng phục vụ</p>
+                    <p>khách hàng tại Showroom</p> -->
                     </div>
+                  </b-col>
 
-                </div>
-            </div>
-        </div> -->
-        <!-- Popup 3 -->
-        <!-- <div class="modal fade" id="exampleModalLong3" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img src="../assets/button7.svg">
-                        <p class="text-4">Vietmap rất tiếc vì nhân viên Showroom</p>
-                        <p class="text-4">chưa đáp ứng được mong đợi của Quý khách</p>
-                        <div class="text-popup">
-                            <p class="text-2">Quý khách vui lòng góp ý những điểm nhân viên</p>
-                            <p class="text-2">Trần Phối Dung cần cải thiện để Quý khách hài lòng hơn</p>
-                        </div>
-                        <form>
-                            <div class="form-group">
-                                <label for="phonenumber">Số điện thoại (không bắt buộc)</label>
-                                <input type="numberphone" class="form-control" id="phonenumber"
-                                    placeholder="Nhập số điện thoại của Quý khách">
-                            </div>
-                            <div class="form-group">
-                                <label for="comment">Góp ý</label>
-                                <textarea type="text" class="form-control" id="comment"
-                                    placeholder="Ghi góp ý của Quý khách vào đây"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary sendcomment">GỬI ĐÁNH GIÁ</button>
-                        </form>
-                    </div>
+                  <b-col sm="6">
+                    <b-form>
+                      <b-form-group
+                        label="Số điện thoại (không bắt buộc)"
+                        label-for="phone-input"
+                        style="
+                          font-weight: bold;
+                          font-size: 12px;
+                          margin-bottom: 20px;
+                        "
+                      >
+                        <b-form-input
+                          id="phone-input"
+                          placeholder="Nhập số điện thoại của Quý khách"
+                        ></b-form-input>
+                      </b-form-group>
+                      <b-form-group
+                        label="Góp ý"
+                        label-for="comment-input"
+                        style="
+                          font-weight: bold;
+                          font-size: 12px;
+                          margin-bottom: 20px;
+                        "
+                      >
+                        <textarea
+                          id="comment-input"
+                          placeholder="Ghi góp ý của Quý khách vào đây"
+                        ></textarea>
+                      </b-form-group>
+                    </b-form>
+                  </b-col>
+                  <router-link to="/thankyou1"
+                    ><button
+                      id="thankyou1"
+                      type="submit"
+                      class="btn btn-primary sendcomment"
+                      @click="redirectToThankyou1()"
+                    >
+                      GỬI ĐÁNH GIÁ
+                    </button></router-link
+                  >
+                </b-row>
+              </div>
+            </b-modal>
+          </div>
 
-    <router-view />
-     </hide-at>
-      <show-at breakpoint="mediumAndAbove">
-  <div class="home">
-    <b-row>
-      <div class="text">
-        <p class="text-1">Chào mừng Quý khách đến với</p>
-        <div class="text-show">
-          <a>SHOWROOM VIETMAP</a>
-                </div>
+          <!-- Popup3 -->
+          <b-modal id="modal-center5" hide-footer="true">
+            <div class="modal-center___BV_modal_body_">
+              <div class="image-popup">
+                <img src="../assets/button7.svg" />
+              </div>
+              <div class="text-comment">
+                <p>
+                  Vietmap rất tiếc vì nhân viên Showroom chưa đáp ứng được mong
+                  đợi của Quý khách
+                </p>
+                <!-- <p>chưa đáp ứng được mong đợi của Quý khách</p> -->
+              </div>
+              <b-row>
+                <b-col sm="6">
+                  <div class="text-popup">
+                    <p>
+                      Quý khách vui lòng góp ý những điểm nhân viên Trần Phối
+                      Dung cần cải thiện để Quý khách hài lòng hơn
+                    </p>
+                  </div>
+                </b-col>
+                <b-col sm="6">
+                  <form>
+                    <b-form-group
+                      label="Số điện thoại (không bắt buộc)"
+                      label-for="phone-input"
+                      style="
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin-bottom: 20px;
+                      "
+                    >
+                      <b-form-input
+                        id="phone-input"
+                        placeholder="Nhập số điện thoại của Quý khách"
+                      ></b-form-input>
+                    </b-form-group>
+                    <b-form-group
+                      label="Góp ý"
+                      label-for="comment-input"
+                      style="
+                        font-weight: bold;
+                        font-size: 12px;
+                        margin-bottom: 20px;
+                      "
+                    >
+                      <textarea
+                        id="comment-input"
+                        placeholder="Ghi góp ý của Quý khách vào đây"
+                      ></textarea>
+                    </b-form-group>
+                  </form>
+                </b-col>
+                <router-link to="/thankyou2">
+                  <b-button type="submit" class="btn btn-primary sendcomment"
+                    >GỬI ĐÁNH GIÁ</b-button
+                  ></router-link
+                >
+              </b-row>
             </div>
-        </div> -->
-        <!-- Popup 4&5 -->
-
-        <!-- <div class="modal fade" id="exampleModalLong4" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <img src="../assets/button8.svg">
-                        <p class="text-4">Quý khách vui lòng cho</p>
-                        <p class="text-4">Vietmap xin số điện thoại</p>
-                        <div class="text-popup">
-                            <p class="text-2">Quý khách vui lòng góp ý những điểm nhân viên</p>
-                            <p class="text-2">Trần Phối Dung cần cải thiện để Quý khách hài lòng hơn</p>
-                        </div>
-                        <form>
-                            <div class="form-group">
-                                <label for="phonenumber">Số điện thoại (không bắt buộc)</label>
-                                <input type="numberphone" class="form-control" id="phonenumber"
-                                    placeholder="Nhập số điện thoại của Quý khách">
-                            </div>
-                            <button type="submit" class="btn btn-primary sendcomment">GỬI ĐÁNH GIÁ</button>
-                        </form>
-                    </div>
-
-                </div>
+          </b-modal>
+          <!-- Popup45 -->
+          <b-modal id="modal-center6" hide-footer="true">
+            <div class="modal-center___BV_modal_body_">
+              <div class="image-popup">
+                <img src="../assets/button8.svg" />
+              </div>
+              <div class="text-comment">
+                <p>Quý khách vui lòng cho</p>
+                <p>Vietmap xin số điện thoại</p>
+              </div>
+              <form>
+                <b-form-group
+                  label="Số điện thoại (không bắt buộc)"
+                  label-for="phone-input"
+                  style="
+                    font-weight: bold;
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                  "
+                >
+                  <b-form-input
+                    id="phone-input"
+                    placeholder="Nhập số điện thoại của Quý khách"
+                  ></b-form-input>
+                </b-form-group>
+                <router-link to="/thankyou3">
+                  <b-button type="submit" class="btn btn-primary sendcomment"
+                    >GỬI ĐÁNH GIÁ</b-button
+                  ></router-link
+                >
+              </form>
             </div>
-        </div> -->
-            <!-- Popup1 -->
-            <div>
-               <b-modal id="modal-center1" hide-footer="true" hide-header="true">
-                 <div class="modal-center___BV_modal_body_">
-                   <div class="image-popup">
-                        <img src="../assets/button6.svg">
-                   </div>
-                   <div class="text-comment">
-                        <p class="text-4">Vietmap xin lỗi vì nhân viên Trần Phối Dung</p>
-                        <p class="text-4">chưa làm Quý khách hài lòng</p>
-                   </div>
-                        <div class="text-popup">
-                            <p class="text-2">Quý khách vui lòng chia sẻ những điều không hài lòng để</p>
-                            <p class="text-2">Vietmap cải thiện chất lượng hoặc để lại số điện thoại,</p>
-                            <p class="text-2">Quản lý bộ phận CSKH Vietmap sẽ liên hệ lại để hỗ trợ Quý</p>
-                            <p class="text-2">khách tốt hơn cũng như để nâng cao chất lượng phục vụ</p>
-                            <p class="text-2">khách hàng tại Showroom</p>
-                        </div>
-                        <b-form>
-                          <b-form-group label="Số điện thoại (không bắt buộc)" label-for="phone-input" style="font-weight:bold;font-size:12px;margin-bottom:20px">
-                            <b-form-input id="phone-input" placeholder="Nhập số điện thoại của Quý khách"></b-form-input>
-                          </b-form-group>
-                          <b-form-group label="Góp ý" label-for="comment-input" style="font-weight:bold;font-size:12px;margin-bottom:20px">
-                            <textarea id="comment-input" placeholder="Ghi góp ý của Quý khách vào đây"></textarea>
-                          </b-form-group>
-                          <router-link to="/thankyou1"><button id="thankyou1" type="submit" class="btn btn-primary sendcomment"  @click="redirectToThankyou1()">GỬI ĐÁNH GIÁ</button></router-link>
-                        </b-form>
-                    
-                   </div> 
-                </b-modal>
-            </div>
-              
-            <!-- Popup3 -->
-               <b-modal id="modal-center3" hide-footer="true" hide-header="true">
-                 <div class="modal-center___BV_modal_body_">
-                   <div class="image-popup">
-                        <img src="../assets/button7.svg">
-                   </div>
-                   <div class="text-comment">
-                        <p class="text-4">Vietmap rất tiếc vì nhân viên Showroom</p>
-                        <p class="text-4">chưa đáp ứng được mong đợi của Quý khách</p>
-                   </div>
-                        <div class="text-popup">
-                            <p class="text-2">Quý khách vui lòng góp ý những điểm nhân viên</p>
-                            <p class="text-2">Trần Phối Dung cần cải thiện để Quý khách hài lòng hơn</p>
-                        </div>
-                        <form>
-                          <b-form-group label="Số điện thoại (không bắt buộc)" label-for="phone-input" style="font-weight:bold;font-size:12px;margin-bottom:20px">
-                            <b-form-input id="phone-input" placeholder="Nhập số điện thoại của Quý khách"></b-form-input>
-                          </b-form-group>
-                          <b-form-group label="Góp ý" label-for="comment-input" style="font-weight:bold;font-size:12px;margin-bottom:20px">
-                            <textarea id="comment-input" placeholder="Ghi góp ý của Quý khách vào đây"></textarea>
-                          </b-form-group>
-                          <router-link to="/thankyou2">
-                          <b-button type="submit" class="btn btn-primary sendcomment" >GỬI ĐÁNH GIÁ</b-button></router-link>
-                        </form>
-                   </div> 
-                </b-modal>
-            <!-- Popup45 -->
-               <b-modal id="modal-center" hide-footer="true" hide-header="true">
-                 <div class="modal-center___BV_modal_body_">
-                   <div class="image-popup">
-                        <img src="../assets/button8.svg">
-                   </div>
-                   <div class="text-comment">
-                        <p class="text-4">Quý khách vui lòng cho</p>
-                        <p class="text-4">Vietmap xin số điện thoại</p>
-                   </div>
-                        <form>
-                          <b-form-group label="Số điện thoại (không bắt buộc)" label-for="phone-input" style="font-weight:bold;font-size:12px;margin-bottom:20px">
-                            <b-form-input id="phone-input" placeholder="Nhập số điện thoại của Quý khách"></b-form-input>
-                          </b-form-group>
-                          <router-link to="/thankyou3">
-                          <b-button type="submit" class="btn btn-primary sendcomment">GỬI ĐÁNH GIÁ</b-button></router-link>
-                        </form>
-                   </div> 
-                </b-modal>
-            </div>
-
-        <router-view/>
+          </b-modal>
+          <router-view />
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 
@@ -308,152 +524,281 @@ export default {
 };
 </script>
 
-
 <style scoped>
-.home{
-  width:100vw;
-  height:100vh;
+.home {
+  width: 100vw;
+  height: 100vh;
   text-align: center;
   margin-top: 40px;
+  flex-direction: row;
+  margin-bottom: 10px;
 }
-.content{
+.content {
   margin-top: 50px;
 }
-.text{
-  line-height:30px;
+.text {
+  line-height: 30px;
 }
-.text-1{
-  color:#292C2E;
+.text-1 {
+  color: #292c2e;
   font-size: 28px;
   margin-bottom: 20px;
 }
-.text-show{
-  font-size:48px;
-  line-height:50px;
-  color:#00AEEF;
+.text-show {
+  font-size: 48px;
+  line-height: 50px;
+  color: #00aeef;
   font-weight: bold;
-  margin-top:40px;
-  margin-bottom:40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-.text-2{
-  font-size:16px;
-  color:#464A4D;
+.text-2 {
+  font-size: 16px;
+  color: #464a4d;
   text-align: center;
 }
-.rating{
-  margin-top:48px;
+.rating {
+  margin-top: 48px;
 }
 ul {
-  padding:8px;
+  padding: 8px;
 }
 button {
-border: 1px solid #6c757d59;
-    border-radius: 8px;
-    width: 140px;
-    height: 140px;
-    /* padding: 10px; */
-    margin: 10px;
-    background-color: #fff;
-
+  /* border: 1px solid #6c757d59;
+  border-radius: 8px; */
+  width: 140px;
+  height: 140px;
+  border: 0;
+  /* padding: 10px; */
+  margin: 10px;
+  background-color: rgb(255 255 255 / 4%);
 }
 .btn {
-    width: 100px;
-    height: 50px;
-    display: inline-block;
-    margin-top: 0px;
-    padding: 2;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    border-radius: 0.25rem;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  margin-top: 0px;
+  padding: 2;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: none;
 }
 a {
-  text-decoration: none
+  text-decoration: none;
 }
-.text-3{
-  font-size:12px;
-  line-height:16px;
-  color:#292C2E;
-  font-weight:bold;
+.text-3 {
+  font-size: 12px;
+  line-height: 16px;
+  color: #292c2e;
+  font-weight: bold;
 }
-.image-popup{
-  width:96px;
-  height:96px;
+.close {
+  align-items: right;
+}
+.image-popup {
+  width: 96px;
+  height: 96px;
   line-height: 96px;
-  margin-bottom:40px;
-  margin-top:56px;
+  margin-bottom: 40px;
 }
-.text-comment{
+.text-comment {
   font-size: 20px;
-  color:#00AEEF;
-  vertical-align:middle;
-  font-weight:bold;
-  margin-bottom:24px;
+  color: #00aeef;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-bottom: 24px;
   text-align: center;
 }
-.text-popup{
+.text-popup {
   font-size: 18px;
-  color:#464A4D;
-  
-    margin-bottom: 40px
-px
-;
+  color: #464a4d;
+
+  margin-bottom: 40px px;
 }
-.label{
-    font-weight: bold;
-    font-size: 12px;
-    margin-bottom: 10px;
+.label {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
-  .form-control{
-    margin-bottom:10px;
-  }
-form-input{
+.form-control {
+  margin-bottom: 10px;
+}
+form-input {
   border: 1px solid;
-  border-radius:8px;
+  border-radius: 10px;
 }
-textarea{
-    width: 100%;
-    height: 75px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+textarea {
+  width: 100%;
+  height: 75px;
+  border: 1px solid #ced4da;
+  border-radius: 0.5rem;
 }
-.sendcomment{
-  background-color:#05BBFF;
-  font-size:16px;
-  color:#fff;
-  width:100%;
+.sendcomment {
+  background-color: #05bbff;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
   margin-top: 20px;
-    margin-left: 0;
+  margin-left: 0;
 }
-modal{
+.modal-body {
   align-items: center;
   width: 50%;
+  padding: 3rem;
 }
-.image-popup{
+.image-popup {
   align-items: center;
-  
-    margin-left: auto;
-    margin-right: auto;
+
+  margin-left: auto;
+  margin-right: auto;
 }
-form{
-  margin-top:30px;
+form {
+  margin-top: 30px;
 }
-p{
-  padding:0;
-  margin-bottom:0;
+p {
+  padding: 0;
+  margin-bottom: 0;
+}
+.image {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  button {
+    width: 180px;
+    height: 180px;
+    border: none;
+  }
+  .text-3 {
+    font-size: 15px;
+  }
+  .rating {
+    margin-top: 0px;
+  }
+  .text-2 {
+    font-size: 20px;
+  }
+  .modal-body {
+    align-items: center;
+    padding: 2.5rem;
+  }
+  col .text-2 {
+    font-size: 16px;
+    text-align: center;
+  }
+  .text-popup {
+    text-align: center;
+  }
+  .sendcomment {
+    width: 100%;
+    align-items: center;
+  }
+  .text-comment {
+    font-size: 18px;
+  }
+  .modal-body {
+    padding: 2rem;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  #session1 {
+    visibility: visible;
+  }
+  #session2 {
+    display: none;
+  }
+  .text-1 {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .text-show {
+    font-size: 30px;
+    margin: 15px;
+  }
+  .text-2 {
+    font-size: 12px;
+  }
+  .rating {
+    margin-top: 0;
+  }
+  ul {
+    margin-top: 0;
+  }
+  .text-3 {
+    display: none;
+  }
+  button {
+    width: 50px;
+  }
+  .modal-body {
+    padding: 4rem;
+  }
+  .text-comment {
+    font-size: 16px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  #session1 {
+    visibility: visible;
+  }
+  #session2 {
+    display: none;
+  }
+  button {
+    margin: 0;
+  }
+}
+/*Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 992px) {
+  #session1 {
+    display: none;
+  }
+  #session2 {
+    display: block;
+  }
+  button {
+    width: 180px;
+    height: 180px;
+    border: none;
+    background-color: rgb(255 255 255 / 4%);
+    margin: 20px;
+  }
+  .text-3 {
+    font-size: 15px;
+  }
+  .rating {
+    margin-top: 0px;
+  }
+  .text-2 {
+    font-size: 20px;
+  }
+  .text-popup {
+    font-size: 13px;
+  }
+  form {
+    margin-top: 0;
+  }
+  .modal-content {
+    width: 500px;
+  }
+  .modal-body {
+    position: relative;
+    padding: 3rem;
+  }
 }
 </style>
-
-
